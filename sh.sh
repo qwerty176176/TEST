@@ -1,19 +1,15 @@
 cd /var/www/html
 
+git status
+
 git add .
 
-echo 'Enter the commit message:'
+echo 'Enter the tagno:'
 read commitMessage
-
 git commit -m "$commitMessage"
 
-echo 'Enter Tag No:'
-read  tagmessage
-git checkout  "$tagmessage"
-
-echo 'Enter the name of the branch:'
-read branch
-
-git push origin $branch
+git push 
+git tag "$commitMessage"
+git push --tags
 
 read
